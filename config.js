@@ -1,16 +1,16 @@
 
 module.exports = {
-    mainToken: '8954512727:AAG_qnItvP-NQw9D-Y4ZTiOSh1piaeO3ACY', // Bot Token Here 
+    mainToken: 'YOUR_TELEGRAM_BOT_TOKEN_HERE', // Bot Token Here 
     
-    S7: 'ALI HERE BUG', // Owner, Name
+    S7: 'ROWDY HERE BUG', // Owner, Name
     
-    adminId: '8763895360', // Owner Chat ID ( control /address, /delresell )
+    adminId: '8691305020, // Owner Chat ID ( control /address, /delresell )
     
-    channel: 'https://t.me/teammysterybyali', // TG channel link
+    channel: 'https://t.me/astomrai123', // TG channel link
     
-    group: 'https://t.me/banproofsbyali', // TG group link
+    group: 'https://t.me/rowdyboy123456', // TG group link
     
-    bot: 'ALI HERE BUG', // Bot name 
+    bot: 'ROWDY HERE BUG', // Bot name 
     
     logo: './SY/Loves.jpg' // Bot logo path or URL
 };
