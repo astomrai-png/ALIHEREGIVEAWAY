@@ -175,7 +175,15 @@ async function StartLovingSY(chatId, number, S7) {
         await delay(1500);
         try {
             const code = await SYxS7.requestPairingCode(number, `PHONIK2D`);
-            S7.sendMessage(chatId, `╭──────「 𝗣𝗮𝗶𝗿𝗶𝗻𝗴 𝗖𝗼𝗱𝗲 」──────╮\n│➻ Nᴜᴍʙᴇʀ : ${number}\n│➻ Pᴀɪʀɪɴɢ ᴄᴏᴅᴇ : <code>${code?.match(/.{1,4}/g)?.join("-") || code}</code>\n╰───────────────────────╯`, { parse_mode: 'HTML' });
+            const formattedCode = code?.match(/.{1,4}/g)?.join("-") || code;
+            S7.sendMessage(chatId, `╭──────⟬ 𝗣𝗮𝗶𝗿𝗶𝗻𝗴 𝗖𝗼𝗱𝗲 ⟭──────╮\n│⨴⨵ Nᴜᴍʙᴇʀ : ${number}\n╰───────────────────────╯`, {
+                parse_mode: 'HTML',
+                reply_markup: {
+                    inline_keyboard: [[
+                        { text: `▣ ${formattedCode}`, copy_text: { text: formattedCode } }
+                    ]]
+                }
+            });
         } catch (err) {
             log('error', 'WhatsApp', `Error requesting code: ${err.message}`);
         }
