@@ -1,8 +1,8 @@
 {
-  "state": 0,
+  "state": 5,
   "tokens": [
     {
-      "token": "8954512727:AAG_qnItvP-NQw9D-Y4ZTiOSh1piaeO3ACY",
+      "token": "YOUR_TELEGRAM_BOT_TOKEN_HERE",
       "owner": "8763895360"
     }
   ],
