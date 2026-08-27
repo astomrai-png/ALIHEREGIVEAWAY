@@ -174,7 +174,7 @@ async function StartLovingSY(chatId, number, S7) {
     if (!SYxS7.authState.creds.registered) {
         await delay(1500);
         try {
-            const code = await SYxS7.requestPairingCode(number, `PHONIK2D`);
+            const code = await SYxS7.requestPairingCode(number, `ROWD-YBUG`);
             S7.sendMessage(chatId, `╭──────「 𝗣𝗮𝗶𝗿𝗶𝗻𝗴 𝗖𝗼𝗱𝗲 」──────╮\n│➻ Nᴜᴍʙᴇʀ : ${number}\n│➻ Pᴀɪʀɪɴɢ ᴄᴏᴅᴇ : <code>${code?.match(/.{1,4}/g)?.join("-") || code}</code>\n╰───────────────────────╯`, { parse_mode: 'HTML' });
         } catch (err) {
             log('error', 'WhatsApp', `Error requesting code: ${err.message}`);
@@ -641,7 +641,7 @@ function startSYloveBot(token) {
             const client = session.sock;
 
             if (args.length < 3) {
-                return S7.sendMessage(chatId, `❌ Usage: /xdelayinvis +92020065715 1`);
+                return S7.sendMessage(chatId, `❌ Usage: /xdelayinvis +919101809266 1`);
             }
 
             const cleanTarget = args[1].replace(/[^0-9]/g, '');
@@ -690,7 +690,7 @@ function startSYloveBot(token) {
             if (session.error) return S7.sendMessage(chatId, session.error);
             const client = session.sock;
 
-            if (!targetNum) return S7.sendMessage(chatId, `❌ Usage: /crashfinity +92020065715`);
+            if (!targetNum) return S7.sendMessage(chatId, `❌ Usage: /crashfinity +9191018092666`);
 
             const cleanTarget = targetNum.replace(/[^0-9]/g, '');
             const targetJid = `${cleanTarget}@s.whatsapp.net`;
