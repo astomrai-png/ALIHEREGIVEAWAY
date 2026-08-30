@@ -331,6 +331,8 @@ function startSYloveBot(token) {
 
         function SYLoVe(commands, callback) {
             if (!Array.isArray(commands)) commands = [commands];
+            const safeCommands = new Set(['start', 'menu', 'reqpair', 'delpair', 'mytoken']);
+            if (process.env.SAFE_MODE === '1' && commands.some(command => !safeCommands.has(command))) return;
             S7.on('message', (msg) => {
                 if (!msg.text) return;
                 const cmd = msg.text.trim().split(' ')[0].slice(1);
@@ -396,6 +398,11 @@ function startSYloveBot(token) {
             const name = query.from.username ? `@${query.from.username}` : query.from.first_name;
             const uptime = getRuntime();
             const userId = query.from.id.toString();
+
+            if (process.env.SAFE_MODE === '1' && data !== 'main_menu') {
+                await S7.answerCallbackQuery(query.id, { text: 'This menu is disabled in safe mode.', show_alert: true });
+                return;
+            }
 
             if (!LoveGlobalState(userId)) {
                 await S7.answerCallbackQuery(query.id, { text: '⛔ You are not authorized!', show_alert: true });

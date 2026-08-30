@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "panel": "node panel-server.js"
   },
   "dependencies": {
     "@hapi/boom": "^10.0.1",
